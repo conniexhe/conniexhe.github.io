@@ -1,0 +1,129 @@
+.topnav {
+	background-color: #c7c7bb;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	font-size: 20px;
+}
+
+.nav-list {
+	list-style: none;
+	/* padding: 0; */
+
+	/* display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end; */
+}
+
+li {
+	display: inline-block;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 0px;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  color: white;
+	padding-bottom: 3px;
+	padding-top: 3px;
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+.nav-list a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.nav-list a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.topnav span.icon {
+  display: none;
+}
+
+.closebtn {
+	display: none;
+}
+
+@media all and (max-width: 735px) {
+	.pages {
+		display: block;
+	  height: 0%;
+	  width: 100%;
+	  position: fixed;
+	  z-index: 1;
+	  top: 0;
+	  left: 0;
+	  background-color: rgba(127,134,123, 1);
+	  overflow-y: hidden;
+	  transition: 0.5s;
+	}
+
+	.nav-list{
+		display: flex;
+		margin-top: 15%;
+		align-items: center;
+		flex-flow: column wrap;
+		justify-content: center;
+	}
+
+	.nav-list a{
+		vertical-align: middle;
+		text-align: center;
+		padding: 25px;
+	}
+
+	a.closebtn {
+		display: block;
+	  position: absolute;
+	  color: white;
+	  top: 20px;
+	  right: 45px;
+	  font-size: 40px;
+	}
+
+  .topnav span.icon {
+		cursor: pointer;
+		color: white;
+    float: right;
+		padding: 23px 20px 23px;
+    display: block;
+  }
+}
+
+#logo {
+	position: absolute;
+	left: 16px;
+	padding-right: 10%;
+	padding-left: 10px;
+}
+#logo a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: #e3e4e0;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+#logo a:hover::after, a:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
